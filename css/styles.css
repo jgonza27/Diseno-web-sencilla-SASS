@@ -1,17 +1,115 @@
-/* Error: Expected digit.
- *    ,
- * 11 | $fuente-titulo-principal: 2. 5rem;
- *    |                             ^
- *    '
- *   scss/styles.scss 11:29  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected digit.\a    \2577 \a 11 \2502  $fuente-titulo-principal: 2. 5rem;\a    \2502                              ^\a    \2575 \a   scss/styles.scss 11:29  root stylesheet";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Times New Roman", "Georgia", serif;
+  background-color: #c8dce8;
+}
+
+.banner-principal {
+  background-color: #4a5a9d;
+  color: #ffffff;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Times New Roman", "Georgia", serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.banner-secundario {
+  background-color: #4a8a3d;
+  color: #ffffff;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Times New Roman", "Georgia", serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.contenido {
+  padding: 20px 40px;
+}
+
+.titulos-cursos {
+  display: flex;
+  margin-bottom: 10px;
+}
+.titulos-cursos .titulo-primero {
+  font-family: "Times New Roman", "Georgia", serif;
+  color: #2c2c2c;
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex: 0 0 auto;
+  text-align: center;
+  padding-right: 20px;
+  min-width: 420px;
+}
+.titulos-cursos .titulo-segundo {
+  font-family: "Times New Roman", "Georgia", serif;
+  color: #2c2c2c;
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+
+.cursos {
+  display: flex;
+  align-items: flex-start;
+}
+
+.columna-curso .asignatura {
+  font-family: "Times New Roman", "Georgia", serif;
+  color: #2c2c2c;
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: baseline;
+  padding: 2px 0;
+}
+
+.columna-primero {
+  flex: 0 0 auto;
+}
+.columna-primero .nombre-asignatura {
+  white-space: nowrap;
+}
+
+.columna-segundo {
+  flex: 1;
+}
+.columna-segundo .asignatura {
+  gap: 0;
+}
+.columna-segundo .horas-izq {
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 80px;
+}
+.columna-segundo .nombre-asignatura {
+  flex: 1;
+}
+.columna-segundo .horas-der {
+  font-weight: 700;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
