@@ -1,0 +1,104 @@
+$color-principal: #3a4a7d;
+$color-secundario: #5a7a4d;
+$color-texto-claro: #ffffff;
+$color-texto-oscuro: #2c2c2c;
+$color-fondo: #e8e8e8;
+
+$fuente-principal: 'Arial', 'Helvetica', sans-serif;
+$peso-normal: 400;
+$peso-negrita: 700;
+
+$fuente-titulo-principal: 2.5rem;
+$fuente-subtitulo: 0.9rem;
+$fuente-encabezado-curso: 1.3rem;
+$fuente-texto-normal: 1rem;
+
+$altura-banner-verde: 30px;
+$altura-banner-azul: $altura-banner-verde * 5;
+
+$padding-banner: 20px;
+$padding-contenido: 30px;
+$margen-seccion: 20px;
+
+@mixin estilo-cabecera($bg-color, $altura) {
+    background-color: $bg-color;
+    color: $color-texto-claro;
+    height: $altura;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $padding-banner;
+    font-family: $fuente-principal;
+    font-weight: $peso-negrita;
+    text-align: center;
+}
+
+@mixin estilo-texto-contenido {
+    font-family: $fuente-principal;
+    color: $color-texto-oscuro;
+    font-weight: $peso-normal;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fuente-principal;
+    background-color: $color-fondo;
+}
+
+.banner-principal {
+    @include estilo-cabecera($color-principal, $altura-banner-azul);
+    font-size: $fuente-titulo-principal;
+}
+
+.banner-secundario {
+    @include estilo-cabecera($color-secundario, $altura-banner-verde);
+    font-size: $fuente-subtitulo;
+    font-style: italic;
+}
+
+.contenido {
+    padding: $padding-contenido;
+    display: flex;
+    gap: 40px;
+}
+
+.columna-curso {
+    flex: 1;
+
+    h2 {
+        @include estilo-texto-contenido;
+        font-size: $fuente-encabezado-curso;
+        font-weight: $peso-negrita;
+        margin-bottom: $margen-seccion;
+        text-align: center;
+    }
+
+    .asignatura {
+        @include estilo-texto-contenido;
+        font-size: $fuente-texto-normal;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+
+        .nombre-asignatura {
+            flex: 1;
+        }
+
+        .horas {
+            font-weight: $peso-negrita;
+            margin-left: 15px;
+        }
+    }
+}
+
+.columna-curso:first-child {
+    border-right: 2px solid darken($color-fondo, 20%);
+    padding-right: 30px;
+}
