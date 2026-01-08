@@ -1,24 +1,24 @@
-$color-principal: #3a4a7d;
-$color-secundario: #5a7a4d;
+$color-principal: #4a5a9d;
+$color-secundario: #4a8a3d;
 $color-texto-claro: #ffffff;
 $color-texto-oscuro: #2c2c2c;
-$color-fondo: #e8e8e8;
+$color-fondo: #d8e8f0;
 
-$fuente-principal: 'Arial', 'Helvetica', sans-serif;
+$fuente-principal: 'Times New Roman', 'Georgia', serif;
 $peso-normal: 400;
 $peso-negrita: 700;
 
 $fuente-titulo-principal: 2.5rem;
-$fuente-subtitulo: 0.9rem;
-$fuente-encabezado-curso: 1.3rem;
-$fuente-texto-normal: 1rem;
+$fuente-subtitulo: 0.95rem;
+$fuente-encabezado-curso: 1.1rem;
+$fuente-texto-normal: 0.95rem;
 
-$altura-banner-verde: 30px;
-$altura-banner-azul: $altura-banner-verde * 5;
+$altura-banner-verde: 28px;
+$altura-banner-azul: 120px;
 
 $padding-banner: 20px;
-$padding-contenido: 30px;
-$margen-seccion: 20px;
+$padding-contenido: 20px 40px;
+$margen-seccion: 15px;
 
 @mixin estilo-cabecera($bg-color, $altura) {
     background-color: $bg-color;
@@ -37,8 +37,7 @@ $margen-seccion: 20px;
     font-family: $fuente-principal;
     color: $color-texto-oscuro;
     font-weight: $peso-normal;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    line-height: 1.8;
 }
 
 * {
@@ -66,12 +65,11 @@ body {
 .contenido {
     padding: $padding-contenido;
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .columna-curso {
-    flex: 1;
-
     h2 {
         @include estilo-texto-contenido;
         font-size: $fuente-encabezado-curso;
@@ -84,21 +82,41 @@ body {
         @include estilo-texto-contenido;
         font-size: $fuente-texto-normal;
         display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-
-        .nombre-asignatura {
-            flex: 1;
-        }
-
-        .horas {
-            font-weight: $peso-negrita;
-            margin-left: 15px;
-        }
+        align-items: baseline;
+        padding: 2px 0;
     }
 }
 
-.columna-curso:first-child {
-    border-right: 2px solid darken($color-fondo, 20%);
-    padding-right: 30px;
+.columna-primero {
+    flex: 0 0 auto;
+
+    .nombre-asignatura {
+        white-space: nowrap;
+    }
+}
+
+.columna-segundo {
+    flex: 1;
+
+    .asignatura {
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .horas-izq {
+        font-weight: $peso-negrita;
+        white-space: nowrap;
+        min-width: 75px;
+    }
+
+    .nombre-asignatura {
+        flex: 1;
+    }
+
+    .horas-der {
+        font-weight: $peso-negrita;
+        white-space: nowrap;
+        text-align: right;
+        min-width: 75px;
+    }
 }
