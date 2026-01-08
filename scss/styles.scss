@@ -90,6 +90,13 @@ body {
 .columna-primero {
     flex: 0 0 auto;
 
+    .horas-izq {
+        font-weight: $peso-negrita;
+        white-space: nowrap;
+        min-width: 75px;
+        margin-right: 8px;
+    }
+
     .nombre-asignatura {
         white-space: nowrap;
     }
@@ -99,24 +106,16 @@ body {
     flex: 1;
 
     .asignatura {
-        justify-content: flex-start;
-        gap: 5px;
-    }
-
-    .horas-izq {
-        font-weight: $peso-negrita;
-        white-space: nowrap;
-        min-width: 75px;
+        gap: 0;
     }
 
     .nombre-asignatura {
-        flex: 1;
+        white-space: nowrap;
     }
 
     .horas-der {
         font-weight: $peso-negrita;
         white-space: nowrap;
-        text-align: right;
-        min-width: 75px;
+        margin-left: 4px;
     }
 }

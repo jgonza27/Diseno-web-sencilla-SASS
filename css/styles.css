@@ -69,6 +69,12 @@ body {
 .columna-primero {
   flex: 0 0 auto;
 }
+.columna-primero .horas-izq {
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 75px;
+  margin-right: 8px;
+}
 .columna-primero .nombre-asignatura {
   white-space: nowrap;
 }
@@ -77,22 +83,15 @@ body {
   flex: 1;
 }
 .columna-segundo .asignatura {
-  justify-content: flex-start;
-  gap: 5px;
-}
-.columna-segundo .horas-izq {
-  font-weight: 700;
-  white-space: nowrap;
-  min-width: 75px;
+  gap: 0;
 }
 .columna-segundo .nombre-asignatura {
-  flex: 1;
+  white-space: nowrap;
 }
 .columna-segundo .horas-der {
   font-weight: 700;
   white-space: nowrap;
-  text-align: right;
-  min-width: 75px;
+  margin-left: 4px;
 }
 
 /*# sourceMappingURL=styles.css.map */
