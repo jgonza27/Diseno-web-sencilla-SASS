@@ -2,13 +2,13 @@ $color-principal: #4a5a9d;
 $color-secundario: #4a8a3d;
 $color-texto-claro: #ffffff;
 $color-texto-oscuro: #2c2c2c;
-$color-fondo: #d8e8f0;
+$color-fondo: #c8dce8;
 
 $fuente-principal: 'Times New Roman', 'Georgia', serif;
 $peso-normal: 400;
 $peso-negrita: 700;
 
-$fuente-titulo-principal: 2.5rem;
+$fuente-titulo-principal: 2. 5rem;
 $fuente-subtitulo: 0.95rem;
 $fuente-encabezado-curso: 1.1rem;
 $fuente-texto-normal: 0.95rem;
@@ -18,7 +18,7 @@ $altura-banner-azul: 120px;
 
 $padding-banner: 20px;
 $padding-contenido: 20px 40px;
-$margen-seccion: 15px;
+$margen-seccion: 10px;
 
 @mixin estilo-cabecera($bg-color, $altura) {
     background-color: $bg-color;
@@ -64,20 +64,37 @@ body {
 
 .contenido {
     padding: $padding-contenido;
+}
+
+.titulos-cursos {
     display: flex;
-    gap: 20px;
+    margin-bottom: $margen-seccion;
+
+    .titulo-primero {
+        @include estilo-texto-contenido;
+        font-size: $fuente-encabezado-curso;
+        font-weight: $peso-negrita;
+        flex: 0 0 auto;
+        text-align: center;
+        padding-right: 20px;
+        min-width: 420px;
+    }
+
+    .titulo-segundo {
+        @include estilo-texto-contenido;
+        font-size: $fuente-encabezado-curso;
+        font-weight: $peso-negrita;
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.cursos {
+    display: flex;
     align-items: flex-start;
 }
 
 .columna-curso {
-    h2 {
-        @include estilo-texto-contenido;
-        font-size: $fuente-encabezado-curso;
-        font-weight: $peso-negrita;
-        margin-bottom: $margen-seccion;
-        text-align: center;
-    }
-
     .asignatura {
         @include estilo-texto-contenido;
         font-size: $fuente-texto-normal;
@@ -89,13 +106,6 @@ body {
 
 .columna-primero {
     flex: 0 0 auto;
-
-    .horas-izq {
-        font-weight: $peso-negrita;
-        white-space: nowrap;
-        min-width: 75px;
-        margin-right: 8px;
-    }
 
     .nombre-asignatura {
         white-space: nowrap;
@@ -109,13 +119,19 @@ body {
         gap: 0;
     }
 
-    .nombre-asignatura {
+    .horas-izq {
+        font-weight: $peso-negrita;
         white-space: nowrap;
+        min-width: 80px;
+    }
+
+    .nombre-asignatura {
+        flex: 1;
     }
 
     .horas-der {
         font-weight: $peso-negrita;
         white-space: nowrap;
-        margin-left: 4px;
+        margin-left: 10px;
     }
 }
